@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Survey Form </title>
+    <link rel="stylesheet" href="Survey_Form.css" />
+  </head>
+  <body>
+    <h1 id="title">Travelers’ Compass: Point Us in the Right Direction </h1>
+    <p id="description"> Your travel experiences are our map to creating unforgettable adventures. Share your insights to help us steer in the right direction.</p>
+     <form id="survey-form"> 
+     <fieldset>
+        <label id="name-label">Travelers’ Name <input id="name" name="name" type="text" placeholder="Enter your full name" required/> </label>
+        <label id="email-label">Your Contact Compass <input id="email" name="email" type="email" placeholder="Enter your email" required/></label>
+        <label id="number-label">Miles Traveled <input id="number" name="number" type="number" placeholder="How many trips have you taken this year?" min=0 max=365 required/></label>
+
+     </fieldset>
+     <fieldset>
+        <label for="dropdown" >Favorite Travel Destination 
+            <select id="dropdown"  name="dropdown">
+                <option value="" >(Select one)</option>
+                <option value="1">Mountains</option>
+                <option value="2" >Beaches</option>
+                <option value="3" >Cities</option>
+                <option value="4" >Countryside</option>
+            </select>
+        </label>
+        
+     </fieldset>
+     <fieldset>
+        <label>Preferred Mode of Travel
+        <label for="plane"><input id="plane" type="radio" name="TravelMode" class="inline" value="Plane" checked /> Plane</label>
+        <label for="train"><input id="train" type="radio" name="TravelMode" class="inline" value="Train" /> Train </label>
+        <label for="Car"><input id="Car" type="radio" name="TravelMode" class="inline" value="Car" /> Car</label>
+        <label for="Boat"><input id="Boat" type="radio" name="TravelMode" class="inline" value="Boat" /> Boat </label>
+        </label>     
+    </fieldset>
+    <fieldset>
+        <label>What Do You Look for in a Trip?
+            <label for="adventure"><input class="inline" id="adventure" type="checkbox" required name="features" value="1"/> Adventure</label>
+            <label for="relaxaion"><input class="inline" id="relaxaion" type="checkbox" required name="features" value="2" /> Relaxation</label>
+            <label for="cultural_experience"><input class="inline" id="cultural_experience" type="checkbox" required name="features" value="3"/> Cultural Experiences</label>
+            <label for="nature"><input class="inline" id="nature" type="checkbox" required name="features" value="4" /> Nature</label>
+            <label for="luxury"><input class="inline" id="luxury" type="checkbox" required name="features" value="5" /> Luxury</label>   
+        </label>
+    </fieldset>
+    <fieldset>
+        <label for="comment">Share Your Travel Story<br><br>
+            <textarea id="comment" class="inline" name="comment" rows="3" cols="30" placeholder="Tell us about your most memorable adventure."></textarea>
+          </label>
+          
+        </fieldset>
+        <input id="submit" type="submit" value="Submit" />
+        </form> 
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="tech_doc.css">
+</head>
+<body>
+    <nav id="navbar">
+
+        <header>Data Structures and Algorithms</header>
+
+        <a href="#Introduction" class="nav-link">Introduction</a>
+        <a href="#Arrays" class="nav-link">Arrays</a>
+        <a href="#Linked_Lists" class="nav-link">Linked Lists</a>
+        <a href="#Stacks" class="nav-link">Stacks</a>
+        <a href="#Queues" class="nav-link">Queues</a>
+        <a href="#Trees" class="nav-link">Trees</a>
+        <a href="#Graphs" class="nav-link">Graphs</a>
+        <a href="#Sorting_Algorithms" class="nav-link">Sorting Algorithms</a>
+        <a href="#Searching_Algorithms" class="nav-link">Searching Algorithms</a>
+        <a href="#Complexity_Analysis" class="nav-link">Complexity Analysis</a>
+    </nav>
+    
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+           
+            <header>Introduction</header>
+
+            <p>Data structures and algorithms are fundamental to efficient programming. They are used to organize and process data, optimizing both time and memory usage.</p>
+            <p>Understanding the complexities and properties of various data structures and algorithms enables developers to solve problems effectively.</p>
+            <p>Key Terminology:</p>
+            <ul>
+                <li><strong>Data Structure:</strong> A way to organize and store data for efficient access and modification.</li>
+                <li><strong>Algorithm:</strong> A sequence of steps or rules to solve a specific problem.</li>
+                <li><strong>Complexity:</strong> Quantitative measure of the performance of an algorithm (e.g., Big-O Notation).</li>
+                <li><strong>Recursion:</strong> A function that calls itself in its definition, often used in divide-and-conquer algorithms.</li>
+            </ul>
+        </section>
+
+        <section class="main-section" id="Arrays">
+            
+            <header>Arrays</header>
+
+            <p>Arrays are a collection of elements stored in contiguous memory locations, providing quick access by index.</p>
+            <p>Properties:</p>
+            <ul>
+                <li>Fixed-size, homogeneous elements.</li>
+            </ul>
+            <p>Operations:</p>
+            <ul>
+                <li>Access: O(1)</li>
+                <li>Search: O(n) for linear search, O(log n) for binary search (sorted arrays).</li>
+                <li>Insertion/Deletion: O(n) due to shifting elements.</li>
+            </ul>
+            <p>Example of an array in C++:</p>
+            <pre>
+                <code>
+                #include &lt;iostream&gt;
+                using namespace std;
+                
+                int main() {
+                    int arr[] = {1, 2, 3, 4, 5};
+                    int size = sizeof(arr) / sizeof(arr[0]);
+                
+                    cout &lt;&lt; "First element: " &lt;&lt; arr[0] &lt;&lt; endl;
+                
+                    cout &lt;&lt; "All elements in the array: ";
+                    for (int i = 0; i &lt; size; i++) {
+                        cout &lt;&lt; arr[i] &lt;&lt; " ";
+                    }
+                    cout &lt;&lt; endl;
+                
+                    return 0;
+                }
+                </code>
+                </pre>
+                
+        </section>
+
+        <section class="main-section" id="Linked_Lists">
+            
+            <header>Linked Lists</header>
+
+            <p>Linked lists consist of nodes, each containing data and a pointer to the next node, allowing dynamic memory allocation.</p>
+            <p>Types:</p>
+            <ul>
+                <li><strong>Singly Linked List:</strong> Each node points to the next node.</li>
+                <li><strong>Doubly Linked List:</strong> Each node points to both the next and previous nodes.</li>
+                <li><strong>Circular Linked List:</strong> Last node points back to the first node.</li>
+            </ul>
+            <p>Operations:</p>
+            <ul>
+                <li>Insertion/Deletion: O(1) at the beginning or end.</li>
+                <li>Search: O(n) since traversal is required.</li>
+            </ul>
+            <p>Example of a singly linked list in C++:</p>
+           <pre>
+            <code>
+                #include &lt;iostream&gt;
+                
+                using namespace std;
+                
+                struct Node {
+                    int data;
+                    Node* next;
+                    Node(int value) : data(value), next(nullptr) {}
+                };
+                
+                Node* head = nullptr;
+                
+                void insert(int value) {
+                    Node* newNode = new Node(value);
+                    if (!head) head = newNode;
+                    else {
+                        Node* temp = head;
+                        while (temp->next) temp = temp->next;
+                        temp->next = newNode;
+                    }
+                }
+                
+                void display() {
+                    for (Node* temp = head; temp; temp = temp->next)
+                        cout &lt;&lt; temp->data &lt;&lt; " ";
+                }
+                </code>
+                
+           </pre>
+        </section>
+
+        <section class="main-section" id="Stacks">
+            
+            <header>Stacks</header>
+
+            <p>Stacks are a Last-In-First-Out (LIFO) data structure.</p>
+            <p>Operations:</p>
+            <ul>
+                <li>Push: Insert element on top.</li>
+                <li>Pop: Remove element from top.</li>
+                <li>Peek: View the top element without removing it.</li>
+            </ul>
+            <p>Complexity: All operations are O(1).</p>
+            <p>Example of a stack in C++ using a vector:</p>
+            <pre>
+                <code>
+                #include &lt;iostream&gt;
+                #include &lt;vector&gt;
+                
+                using namespace std;
+                
+                int main() {
+                    vector&lt;int&gt; stack;
+                
+                    stack.push_back(1);
+                    stack.push_back(2);
+                    stack.push_back(3);
+                
+                    cout &lt;&lt; "Top element: " &lt;&lt; stack.back() &lt;&lt; endl;
+                
+                    stack.pop_back();
+                
+                    cout &lt;&lt; "Remaining elements in stack: ";
+                    for (int i = 0; i &lt; stack.size(); i++) {
+                        cout &lt;&lt; stack[i] &lt;&lt; " ";
+                    }
+                    cout &lt;&lt; endl;
+                
+                    return 0;
+                }
+                </code>
+                </pre>
+                
+        </section>
+
+        <section class="main-section" id="Queues">
+           
+            <header>Queues</header>
+
+            <p>Queues follow a First-In-First-Out (FIFO) order.</p>
+            <p>Types:</p>
+            <ul>
+                <li><strong>Simple Queue:</strong> Basic FIFO queue.</li>
+                <li><strong>Circular Queue:</strong> The last position is connected to the first.</li>
+                <li><strong>Priority Queue:</strong> Each element has a priority; elements are removed based on priority.</li>
+            </ul>
+            <p>Operations:</p>
+            <ul>
+                <li>Enqueue: O(1) if there’s space.</li>
+                <li>Dequeue: O(1) from the front.</li>
+            </ul>
+            <p>Example of a queue in C++ :</p>
+           <pre>
+            <code>
+                &lt;#include &lt;iostream&gt;&gt;<br>
+                <br>
+                #define MAX 5<br>
+                <br>
+                class Queue {<br>
+                    int items[MAX], front = -1, rear = -1;<br>
+                <br>
+                public:<br>
+                    void enqueue(int value) {<br>
+                        if (rear &lt; MAX - 1) {<br>
+                            if (front == -1) front = 0;<br>
+                            items[++rear] = value;<br>
+                        }<br>
+                    }<br>
+                <br>
+                    int dequeue() {<br>
+                        if (front == -1) return -1;<br>
+                        int value = items[front++];<br>
+                        if (front &gt; rear) front = rear = -1; // Reset<br>
+                        return value;<br>
+                    }<br>
+                <br>
+                    void display() {<br>
+                        if (front == -1) return;<br>
+                        for (int i = front; i &lt;= rear; i++) std::cout &lt;&lt; items[i] &lt;&lt; " ";<br>
+                        std::cout &lt;&lt; std::endl;<br>
+                    }<br>
+                };<br>
+                <br>
+                int main() {<br>
+                    Queue q;<br>
+                    q.enqueue(10); q.enqueue(20); q.enqueue(30);<br>
+                    q.display(); // Output: 10 20 30<br>
+                    std::cout &lt;&lt; "Dequeued: " &lt;&lt; q.dequeue() &lt;&lt; std::endl; // Output: 10<br>
+                    q.display(); // Output: 20 30<br>
+                }<br>
+            </code>
+        </pre>
+            
+        </section>
+
+        <section class="main-section" id="Trees">
+           
+            <header>Trees</header>
+
+            <p>Trees are hierarchical data structures with a root and nodes connected as parent and child relationships.</p>
+            <p>Types:</p>
+            <ul>
+                <li><strong>Binary Tree:</strong> Each node has at most two children.</li>
+                <li><strong>Binary Search Tree (BST):</strong> Left &lt; parent &lt; right.</li>
+                <li><strong>Balanced Trees:</strong> AVL and Red-Black trees for balanced height.</li>
+                <li><strong>Heap Trees:</strong> Min-heap, Max-heap for priority-based structures.</li>
+            </ul>
+            <p>Example of a binary tree node in C++:</p>
+           <pre>
+            <code>
+                #include &lt;iostream&gt;<br>
+                <br>
+                struct TreeNode {<br>
+                    int val;<br>
+                    TreeNode *left = nullptr, *right = nullptr;<br>
+                };<br>
+                <br>
+                int main() {<br>
+                    TreeNode *root = new TreeNode{10};<br>
+                    root-&gt;left = new TreeNode{5};<br>
+                    root-&gt;right = new TreeNode{15};<br>
+                <br>
+                    std::cout &lt;&lt; root-&gt;val &lt;&lt; std::endl;<br>
+                    return 0;<br>
+                }
+            </code>
+        </pre>
+        </section>
+
+        <section class="main-section" id="Graphs">
+            
+            <header>Graphs</header>
+
+            <p>Graphs consist of nodes (vertices) connected by edges, useful for representing complex relationships.</p>
+            <p>Types:</p>
+            <ul>
+                <li><strong>Directed and Undirected:</strong> Directionality in edges.</li>
+                <li><strong>Weighted and Unweighted:</strong> Presence of edge weights.</li>
+                <li><strong>Cyclic and Acyclic:</strong> Presence of cycles.</li>
+            </ul>
+            <p>Here’s a simple implementation of a graph using an adjacency list in C++:</p>
+        <pre>
+            <code>
+        #include &lt;iostream&gt;<br>
+        #include &lt;vector&gt;<br>
+        <br>
+        using namespace std;<br>
+        <br>
+        class Graph {<br>
+            vector&lt;vector&lt;int&gt;&gt; adjList;<br>
+        <br>
+        public:<br>
+            Graph(int v) : adjList(v) {}<br>
+            void addEdge(int u, int v) { adjList[u].push_back(v); }<br>
+            void display() {<br>
+                for (int i = 0; i &lt; adjList.size(); ++i) {<br>
+                    cout &lt;&lt; i &lt;&lt; ": ";<br>
+                    for (int j : adjList[i]) cout &lt;&lt; j &lt;&lt; " ";<br>
+                    cout &lt;&lt; endl;<br>
+                }<br>
+            }<br>
+        };<br>
+        <br>
+        int main() {<br>
+            Graph g(5);<br>
+            g.addEdge(0, 1); g.addEdge(0, 4); g.addEdge(1, 2);<br>
+            g.display();<br>
+        }<br>
+    </code>
+</pre> 
+        </section>
+
+        <section class="main-section" id="Sorting_Algorithms">
+            
+            <header>Sorting Algorithms</header>
+
+            <p>Sorting is the process of arranging data in a specific order. Key algorithms include:</p>
+            <ul>
+                <li><strong>Bubble Sort:</strong> O(n<sup>2</sup>), comparison-based.</li>
+                <li><strong>Selection Sort:</strong> O(n<sup>2</sup>), selects the smallest/largest element in each pass.</li>
+                <li><strong>Insertion Sort:</strong> O(n<sup>2</sup>), efficient for small or nearly sorted arrays.</li>
+                <li><strong>Merge Sort:</strong> O(n log n), divide-and-conquer.</li>
+                <li><strong>Quick Sort:</strong> O(n log n) average, in-place sorting.</li>
+                <li><strong>Heap Sort:</strong> O(n log n) using heap data structures.</li>
+            </ul>
+            <p>Example of Bubble sort in C++:</p>
+            <pre><code>
+                #include &lt;iostream&gt;
+                
+                void bubbleSort(int arr[], int n) {
+                    for (int i = 0; i &lt; n - 1; i++) {
+                        for (int j = 0; j &lt; n - i - 1; j++) {
+                            if (arr[j] &gt; arr[j + 1]) {
+                                std::swap(arr[j], arr[j + 1]);
+                            }
+                        }
+                    }
+                }
+                
+                int main() {
+                    int arr[] = {64, 34, 25, 12, 22, 11, 90};
+                    int n = sizeof(arr) / sizeof(arr[0]);
+                    
+                    bubbleSort(arr, n);
+                    
+                    std::cout &lt;&lt; "Sorted array: \n";
+                    for (int i = 0; i &lt; n; i++)
+                        std::cout &lt;&lt; arr[i] &lt;&lt; " ";
+                    
+                    return 0;
+                }
+                </code></pre>
+                
+        </section>
+
+        <section class="main-section" id="Searching_Algorithms">
+           
+            <header>Searching Algorithms</header>
+
+            <p>Searching algorithms find specific elements within data structures.</p>
+            <p>Key algorithms include:</p>
+            <ul>
+                <li><strong>Linear Search:</strong> O(n), sequential search.</li>
+                <li><strong>Binary Search:</strong> O(log n), requires sorted arrays.</li>
+            </ul>
+            <p>Example of binary search in C++:</p>
+            <pre><code>
+                #include &lt;iostream&gt;
+                
+                using namespace std;
+                
+                int binarySearch(int arr[], int size, int target) {
+                    int left = 0, right = size - 1;
+                
+                    while (left &lt;= right) {
+                        int mid = left + (right - left) / 2;
+                
+                        if (arr[mid] == target) {
+                            return mid;
+                        }
+                        if (arr[mid] &lt; target) {
+                            left = mid + 1;
+                        } else {
+                            right = mid - 1;
+                        }
+                    }
+                    return -1;
+                }
+                
+                int main() {
+                    int arr[] = {2, 3, 4, 10, 40};
+                    int size = sizeof(arr) / sizeof(arr[0]);
+                    int target = 10;
+                    
+                    int result = binarySearch(arr, size, target);
+                    if (result != -1) {
+                        cout &lt;&lt; "Element found at index " &lt;&lt; result &lt;&lt; endl;
+                    } else {
+                        cout &lt;&lt; "Element not found" &lt;&lt; endl;
+                    }
+                    
+                    return 0;
+                }
+                </code></pre>
+                
+        </section>
+
+        <section class="main-section" id="Complexity_Analysis">
+          
+            <header>Complexity Analysis</header>
+
+            <p>Complexity analysis evaluates an algorithm's efficiency.</p>
+            <p>Key terms include:</p>
+            <ul>
+                <li><strong>Big-O Notation:</strong> Worst-case performance (e.g., O(n), O(log n)).</li>
+                <li><strong>Big-Theta (Θ):</strong> Average-case complexity.</li>
+                <li><strong>Big-Omega (Ω):</strong> Best-case complexity.</li>
+                <li><strong>Space Complexity:</strong> Memory usage evaluation alongside time complexity.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
+

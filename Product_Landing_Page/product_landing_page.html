@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Photography Guide</title>
+    <link rel="stylesheet" href="product_page.css">
+</head>
+<body>
+
+    <header id="header">
+        <img id="header-img" src="https://img.freepik.com/free-vector/detailed-travel-logo_23-2148616611.jpg?t=st=1730223461~exp=1730227061~hmac=b858330681c5da56b4ca45d2303f956f11b0911d868e83fd6f51ad1ea100d1c0&w=740" alt="Travel Photography Guide Logo">
+        <nav id="nav-bar">
+            <a class="nav-link" href="#hero">Home</a>
+            <a class="nav-link" href="#course-features">Course Details</a>
+            <a class="nav-link" href="#community">Community</a>
+            <a class="nav-link" href="#resources">Resources</a>
+            <a class="nav-link" href="#video-section">Videos</a>
+            
+            <a class="nav-link" href="#footer">Contact</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Capture the World: Master Travel Photography</h1>
+        <p>Join our online course and elevate your photography skills.</p>
+        <button onclick="location.href='#course-features'">Get Started</button>
+    </section>
+
+    <section id="course-features">
+        <h2>What You Will Learn</h2>
+        <div class="features-container">
+            <div class="feature">Lessons on composition, lighting, and gear</div>
+            <div class="feature">Assignments to practice skills on location</div>
+            <div class="feature">Access to a community of photographers</div>
+            <div class="feature">Downloadable resources and checklists</div>
+        </div>
+    </section>
+
+    <section id="community">
+        <h2>Join Our Community</h2>
+        <p>Connect with fellow photographers and share your experiences!</p>
+        <button onclick="location.href='#'">Join Now</button>
+    </section>
+
+    <section id="resources">
+        <h2>Free Resources</h2>
+        <p>Download helpful photography resources.</p>
+        <button onclick="location.href='#'">Download Now</button>
+    </section>
+
+    <section id="video-section">
+        <h2>Watch Our Introductory Video</h2>
+        <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section id="contact"> <!-- Contact Section -->
+        <h2>Contact Us</h2>
+        <form id="form" action="https://www.freecodecamp.com/email-submit" method="POST">
+            <input type="email" id="email" name="email"placeholder="Enter your email for updates" required>
+            <textarea id="message" placeholder="Your message here..." required></textarea>
+            <input type="submit" id="submit" value="Send Message">
+        </form>
+    </section>
+
+    <footer id="footer">
+        <p>&copy; 2024 Travel Photography Guide. All rights reserved.</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+</body>
+</html>
